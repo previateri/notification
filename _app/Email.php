@@ -12,17 +12,18 @@
             $this->mail = new PHPMailer(true);
 
             //Server settings
-            $this->mail->SMTPDebug      = $Config['debug'];
+            $this->mail->SMTPDebug      = $Config['debug'];         //VALOR 2 ATIVA O DEBUG, 0 DESATIVA
             $this->mail->isSMTP();
-            $this->mail->Host           = $Config['host'];          //'mx1.hostinger.com.br';
-            $this->mail->SMTPAuth       = $Config['SMTPAuth'];      // true;
-            $this->mail->Username       = $Config['userMail'];      //'teste-composer@previateri.com';
-            $this->mail->Password       = $Config['userPass'];      //'bananaboa12345';
-            $this->mail->SMTPSecure     = $Config['SMTPSecure'];    //'tls';
-            $this->mail->Port           = $Config['port'];          //587;
             $this->mail->setLanguage('br');
             $this->mail->isHTML(true);
             $this->mail->CharSet = 'utf-8';
+
+            $this->mail->Host           = $Config['host'];          //ENDERECO OU IP DO SERVIDOR DE E-MAILS
+            $this->mail->SMTPAuth       = $Config['SMTPAuth'];      //TRUE
+            $this->mail->Username       = $Config['userMail'];      //EMAIL RESPONSAVEL POR DISPARAR OS E-MAILS
+            $this->mail->Password       = $Config['userPass'];      //SENHA DO EMAIL
+            $this->mail->SMTPSecure     = $Config['SMTPSecure'];    //TIPO DE SEGURANCA, GERALMENTE TLS
+            $this->mail->Port           = $Config['port'];          //NUMERO DA PORTA DE ENVIO, GERALMENTE 587
             $this->mail->setFrom($Config['userMail'], $Config['userName']);
         }
 
