@@ -1,0 +1,24 @@
+{
+    "name": "previateri/notification",
+    "description": "Library simples para o envio de notificações via e-mail.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thiago Previateri",
+            "email": "thiago.previateri@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "6.0.1"
+    },
+	"config": {
+		"vendor-dir": "lib_ext"
+	},
+    "autoload": {
+        "psr-4" : {
+            "Notification\\" : "_app"
+        }
+    }
+}
